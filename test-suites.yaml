@@ -1,0 +1,20 @@
+version: '3'
+services:
+  vendor:
+    image: sumeeetpr/selenium-new
+    environment:
+      - BROWSER=${BROWSER}
+      - HUB_HOST=hub
+      - THREAD_COUNT=4
+      - TEST_SUITE=Vendor.xml
+    volumes:
+      - C:/WorkSpace/docker-selenium/results/vendor:/home/selenium-docker/test-output
+  flight:
+    image: sumeeetpr/selenium-new
+    environment:
+      - BROWSER=${BROWSER}
+      - HUB_HOST=hub
+      - THREAD_COUNT=4
+      - TEST_SUITE=Flight-reservation.xml
+    volumes:
+      - C:/WorkSpace/docker-selenium/results/flight:/home/selenium-docker/test-output    
